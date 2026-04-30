@@ -40,8 +40,8 @@ wss.on('connection', function conection(ws){
 		ws.send('Welcome to my server');
 	}
 
-	db.run(`INSERT INTO vistors (count, time)
-		VALUES(${numClients} datetime('now'))
+	db.run(`INSERT INTO visitors (count, time)
+		VALUES(${numClients}, datetime('now'))
 		`);
 
 	ws.on('close', function close() {
